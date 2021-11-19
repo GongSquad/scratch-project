@@ -1,0 +1,56 @@
+{
+  "name": "scratch-project",
+  "version": "1.0.0",
+  "description": "Codesmith Journal",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development concurrently \"nodemon server/server.js\" \"webpack-dev-server --open\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gibran-Haq/scratch-project.git"
+  },
+  "author": "GongSquad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gibran-Haq/scratch-project/issues"
+  },
+  "homepage": "https://github.com/Gibran-Haq/scratch-project#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "node-fetch": "^3.1.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.0.2",
+    "react-router-dom": "^6.0.2",
+    "redux": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^6.0.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "isomorphic-fetch": "^3.0.0",
+    "nodemon": "^2.0.7",
+    "redux-devtools-extension": "^2.13.9",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.5.0"
+  }
+}
