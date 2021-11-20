@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import Main from './components/Main.jsx'
 
+const getEntries = 'http://localhost:8080/api';
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -16,7 +18,7 @@ render () {
   <div>
     <h3> ): </h3>
     <div>
-    <Main />
+    <Main getEntries = {getEntries}/>
     </div>
     </div>
   );
