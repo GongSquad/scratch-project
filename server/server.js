@@ -12,7 +12,7 @@ const PORT = 3000;
 const app = express();
 
 //this creates a mongoose db
-const MONGO_URI = 'mongodb+srv://nichsuz:<Brady4eva808>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://nichsuz:Brady4eva808@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 //suzuki URI - mongodb+srv://nichsuz:<password>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 

@@ -9,7 +9,13 @@ import app from '../../server/server.js'
 // }
 
 // redux thunk version-->
-
+export const createEntry = formValues => (dispatch) => {
+  app.post('/test', formValues)
+    .then(({ status }) => {
+      if (status === 200) dispatch({ type: types.ADD_ENTRY})
+    })
+    .catch(console.log(error));
+};
 
 
 // for getting/ fetching the posts from the database

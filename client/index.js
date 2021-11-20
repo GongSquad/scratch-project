@@ -5,10 +5,8 @@ import { combineReducers } from 'redux';
 import store from './store';
 import { Provider } from 'react-redux';
 
-
+//make sure to add provider once redux is implemented
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+    <App />,
   document.getElementById('root')
 );

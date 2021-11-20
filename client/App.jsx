@@ -1,6 +1,6 @@
 //import react and component from react
 import React, { Component } from 'react';
-
+import Main from './components/Main.jsx'
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +14,10 @@ componentDidMount() {
 render () {
   return (
   <div>
-    <h3> Hello worldsss </h3>
+    <h3> ): </h3>
+    <div>
+    <Main />
+    </div>
     </div>
   );
 }
