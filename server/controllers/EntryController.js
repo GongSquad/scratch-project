@@ -5,7 +5,7 @@ const EntryController = {
     const { title, date, category, text } = req.body;
     if (!date || !category) return res.render('Missing date and/or category from EntryController.createEntry');
   
-    Entry.create({ title: title, date: date, category: category, text: test }, (err, entry) => {
+    Entry.create({ title: title, date: date, category: category, text: text }, (err, entry) => {
       if (err) {
         console.log('MONGOERRORSAYSWHATTTTTT', err);
         res.status(400);
@@ -19,7 +19,8 @@ const EntryController = {
         // res.send({student: res.locals.student});
       }
     });
-  },
+  }
+
 };
 
 
