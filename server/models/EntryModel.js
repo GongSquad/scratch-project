@@ -4,7 +4,7 @@ const Schema =  mongoose.Schema;
 
 const entrySchema = new Schema({
   title: {type: String, required: false},
-  date: {type: String, format: Date, required: true},
+  date: {type: String, required: true},
   category: {type: String, required: true},
   text: {type: String, required: false}
 })
