@@ -19,7 +19,22 @@ const EntryController = {
         // res.send({student: res.locals.student});
       }
     });
+  },
+
+  async getEntries(req, res) {
+    const entries = await Entry.find();
+    res.locals.entries = entries;
+    res.status(200).json(res.locals.entries);
   }
+  // quizController.getQuestions = async (req, res, next) => {
+  //   console.log('inside get questions')
+  
+  //   const questions = await Question.find();
+  //   res.locals.questions = questions;
+  //   // console.log('result questions', res.locals.questions);
+  //   next();
+  // }
+  
 
 };
 
