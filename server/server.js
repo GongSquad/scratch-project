@@ -31,6 +31,10 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 
 
 /////////////////////////// ROUTE HANDLERS //////////////////////////////////
+
+// display all journal entries in DB
+app.get('/api', entryController.getEntries);
+
 // create a journal entry
 app.post('/api/test', entryController.createEntry);
 
