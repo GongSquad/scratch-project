@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const entryController = require('./controllers/EntryController.js');
 
 //intialize port 3000 const
 const PORT = 3000;
@@ -12,11 +12,11 @@ const PORT = 3000;
 const app = express();
 
 //this creates a mongoose db
-// const MONGO_URI = 'mongodb+srv://tehyaarassman1:starwars1010@cluster0.oqx0c.mongodb.net/questionsCollection?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://nichsuz:<password>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 //suzuki URI - mongodb+srv://nichsuz:<password>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
-// mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'questionsCollection'});
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: ''});
 
 // const db = mongoose.connection
 // db.on('error', (error) => console.error(error))
