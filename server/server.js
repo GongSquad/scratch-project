@@ -12,16 +12,21 @@ const PORT = 3000;
 const app = express();
 
 //this creates a mongoose db
-const MONGO_URI = 'mongodb+srv://nichsuz:<password>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://nichsuz:<Brady4eva808>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 //suzuki URI - mongodb+srv://nichsuz:<password>@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: ''});
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connection.once('open', () => {
+  console.log('Connected to Database');
+});
 
 // const db = mongoose.connection
 // db.on('error', (error) => console.error(error))
 // db.once('open', () => console.log('database connected'))
 
+// const entryRouter = express.Router();
+// app.use('/test', entryRouter);
 
 //url encoded and json body parsers
 app.use(express.json());
@@ -32,15 +37,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
+// POST route to test page
+app.post('/test', entryController.createEntry);
+  // (req, res) => res.status(200).json({})
+
+
 
 //test to send main file to 3000
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'))
 });
-
-
- 
-
 
 //404 error handler
 app.use('*', (req, res) => {
