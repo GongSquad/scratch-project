@@ -1,4 +1,5 @@
 import * as types from '../constants/actionTypes';
+import app from '../../server/server.js'
 // normal redux action creator for creating an entry
 // export const addEntryActionCreator = (entryID) => {
 //   return {
