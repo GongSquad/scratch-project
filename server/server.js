@@ -32,19 +32,19 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 
 /////////////////////////// ROUTE HANDLERS //////////////////////////////////
 // create a journal entry
-app.post('/test', entryController.createEntry);
+app.post('/api/test', entryController.createEntry);
 
-// find a journal entry
-app.get('/test', entryController.getEntry);
+// // find a journal entry
+// app.get('/test', entryController.getEntry);
 
-// update a journal entry
-app.patch('/test', entryController.updateEntry);
+// // update a journal entry
+// app.patch('/test', entryController.updateEntry);
 
-// delete a journal entry
-app.delete('/test', entryController.deleteEntry);
+// // delete a journal entry
+// app.delete('/test', entryController.deleteEntry);
 
-/////////////////////////////////////////////////////////////////////////////
-//test to send main file to 3000
+// /////////////////////////////////////////////////////////////////////////////
+// //test to send main file to 3000
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'))
 });
@@ -58,21 +58,5 @@ app.use('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = app;

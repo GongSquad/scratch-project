@@ -12,7 +12,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <form method="post" action="/test">
+        <form method="post" action="/api/test">
 
           <input name='category' type='text' placeholder='Category...'></input>
           <input name='title' type='text' placeholder='Title...'></input>

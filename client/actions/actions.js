@@ -1,5 +1,5 @@
-import * as types from '../constants/actionTypes';
-import app from '../../server/server.js'
+// import * as types from '../constants/actionTypes';
+// import app from '../../server/server.js'
 // normal redux action creator for creating an entry
 // export const addEntryActionCreator = (entryID) => {
 //   return {
@@ -9,13 +9,13 @@ import app from '../../server/server.js'
 // }
 
 // redux thunk version-->
-export const createEntry = formValues => (dispatch) => {
-  app.post('/test', formValues)
-    .then(({ status }) => {
-      if (status === 200) dispatch({ type: types.ADD_ENTRY})
-    })
-    .catch(console.log(error));
-};
+// export const createEntry = formValues => (dispatch) => {
+//   app.post('/test', formValues)
+//     .then(({ status }) => {
+//       if (status === 200) dispatch({ type: types.ADD_ENTRY})
+//     })
+//     .catch(console.log(error));
+// };
 
 
 // for getting/ fetching the posts from the database
