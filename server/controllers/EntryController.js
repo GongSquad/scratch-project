@@ -2,10 +2,10 @@ const Entry = require('../models/EntryModel.js');
 
 const EntryController = {
   createEntry(req, res) {
-    const { title, date, category, text } = req.body;
-    if (!date || !category) return res.render('Missing date and/or category from EntryController.createEntry');
+    const { title, category, text } = req.body;
+    if (!category) return res.render('Missing date and/or category from EntryController.createEntry');
   
-    Entry.create({ title: title, date: date, category: category, text: text }, (err, entry) => {
+    Entry.create({ title: title, category: category, text: text }, (err, entry) => {
       if (err) {
         console.log('MONGOERRORSAYSWHATTTTTT', err);
         res.status(400);
