@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Entries from './Entries';
 // import { Field, reduxForm } from "redux-form";
 // import { connect } from "react-redux";
 // import { createEntry } from "../actions/actions";
@@ -6,10 +7,25 @@ import React, { Component } from "react";
 //might have problem with props here
 class Main extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state= {
+      entries: []
+    }
   }
-  
+  componentDidMount() {
+    fetch(this.props.getEntries)
+    .then(res => res.json())
+    .then((res) => this.setState({ entries: res }))
+    .catch((error) => {
+      console.log(`There is an ${error} when mounting Quiz component`);
+    })
+  }
+
   render() {
+    const entry = [];
+    for(let i = 0; i < this.state.entries.length; i++) {
+      entry.push(<Entries entries = {this.state.entries[i]} key = {this.state.entries[i]._id} />);
+    }
     return (
       <div>
         <form method="post" action="/api/test">
@@ -19,6 +35,7 @@ class Main extends Component {
           <input name='text' type='text' placeholder='Description...'></input>
           <input type='submit' value="Create Entry"></input>
         </form>
+        <div>{entry}</div>
       </div >
     )
   }

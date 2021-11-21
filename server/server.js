@@ -36,7 +36,9 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 app.get('/api', entryController.getEntries);
 
 // create a journal entry
-app.post('/api/test', entryController.createEntry);
+app.post('/api/test', entryController.createEntry, (req, res) => {
+  return res.status(200).redirect('/');
+});
 
 // // find a journal entry
 // app.get('/test', entryController.getEntry);

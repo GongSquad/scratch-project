@@ -1,7 +1,7 @@
 const Entry = require('../models/EntryModel.js');
 
 const EntryController = {
-  createEntry(req, res) {
+  createEntry(req, res, next) {
     const { title, category, text } = req.body;
     if (!category) return res.render('Missing date and/or category from EntryController.createEntry');
   
@@ -13,9 +13,9 @@ const EntryController = {
         // console.log(student);
         console.log('connected to DB')
         res.locals.entry = entry;
-        res.json(res.locals.entry);
-
-        // next();
+        // res.json(res.locals.entry);
+        // res.redirect('/');
+        next();
         // res.send({student: res.locals.student});
       }
     });
