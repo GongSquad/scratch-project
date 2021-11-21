@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Entries from './Entries';
 // import { Field, reduxForm } from "redux-form";
 // import { connect } from "react-redux";
 // import { createEntry } from "../actions/actions";
@@ -23,7 +24,7 @@ class Main extends Component {
   render() {
     const entry = [];
     for(let i = 0; i < this.state.entries.length; i++) {
-      <Entries entries = {this.state.entries[i]} />
+      entry.push(<Entries entries = {this.state.entries[i]} key = {this.state.entries[i]._id} />);
     }
     return (
       <div>
