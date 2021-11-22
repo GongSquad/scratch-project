@@ -10,13 +10,11 @@ const EntryController = {
         console.log('MONGOERRORSAYSWHATTTTTT', err);
         res.status(400);
       } else{
-        // console.log(student);
         console.log('connected to DB')
         res.locals.entry = entry;
         // res.json(res.locals.entry);
         // res.redirect('/');
         next();
-        // res.send({student: res.locals.student});
       }
     });
   },
