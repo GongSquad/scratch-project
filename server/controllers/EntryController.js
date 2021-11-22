@@ -35,24 +35,31 @@ const EntryController = {
   },
 
 // this method will 
-  async updateEntry(req, res) {
-    const {text} = req.body;
-    const entry = await Entry.findByIdAndUpdate(req.body._id, {text: text}, (err, updated) => {
-      if (err) {
-        console.log(err);
-        res.status(400)
-      } else {
-        res.locals.updated = updated;
-        return res.status(200).json(res.locals.updated)
-      };
+  async updateEntry(req, res, next) {
+    const { title, category, text } = req.body;
+    await Entry.findByIdAndUpdate(`${req.params.entryId}`, {title: title, category: category, text: text},(err, updated) => {
+      if (err) return res.status(400).render('Error in EntryController.updateEntry');
+      console.log(updated)
+
+      res.locals.updated = updated;
+      return next();
     })
+    // const {text} = req.body;
+    // const entry = await Entry.findByIdAndUpdate(req.body._id, {text: text}, (err, updated) => {
+    //   if (err) {
+    //     console.log(err);
+    //     res.status(400)
+    //   } else {
+    //     res.locals.updated = updated;
+    //     return res.status(200).json(res.locals.updated)
+    //   };
+    // })
   },
 
   async deleteEntry(req, res, next) {
-    await Entry.findByIdAndDelete(`${req.params.entryId}`, (err, updated) => {
+    await Entry.findByIdAndDelete(`${req.params.entryId}`, (err, deleted) => {
       if (err) return res.status(400).render('Error in EntryController.deleteEntry');
-      console.log(updated)
-      
+      console.log(deleted)
 
       // res.locals.student = student;
       console.log('Student deleted from database.');
