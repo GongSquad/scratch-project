@@ -32,7 +32,7 @@ class Main extends Component {
   render() {
     const entry = [];
     for (let i = 0; i < this.state.entries.length; i++) {
-      entry.push(<Entries updateEntries={this.props.updateEntries} entries={this.state.entries[i]} deleteEntries={this.props.deleteEntries} entryId={this.state.entries[i]._id} />);
+      entry.push(<Entries entries={this.state.entries[i]} deleteEntries={this.props.deleteEntries} entryId={this.state.entries[i]._id} />);
     }
     return (
       <div className={'main-dev'}>

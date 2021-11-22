@@ -8,10 +8,10 @@ class Modal extends Component {
   }
 
   render() {
-    const showHideClassName = this.props.showModal ? "modal display-block" : "modal display-none" ;
+    // const showHideClassName = this.props.showModal ? "modal display-block" : "modal display-none" ;
     return (
 
-        <section className={showHideClassName}  className="modal-main">
+        <section className="modal-main">
 
             <div>
               <form method="update" action={`/api/update/${this.props.entries._id}`}>
