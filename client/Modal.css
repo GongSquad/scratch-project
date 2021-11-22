@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 80%;
+  height: 80%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+#modal-img {
+  height: 15rem;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.description {
+  padding-top: 2rem;
+  margin: .5rem;
+  font-size: 1.3rem;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.closeBtn {
+  margin: .8rem;
+  height: 4rem;
+  width: 10rem;
+  font-size: 1.1rem;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.closeBtn:hover {
+  background-color:  rgb(144, 238, 218);
+  color:rgb(133, 50, 64);
+}
+
+.closeBtn:active {
+  box-shadow: 0 3.5px rgb(56, 18, 25);
+  transform: translateY(4px);
+}

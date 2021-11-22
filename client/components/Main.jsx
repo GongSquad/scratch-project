@@ -32,7 +32,7 @@ class Main extends Component {
   render() {
     const entry = [];
     for (let i = 0; i < this.state.entries.length; i++) {
-      entry.push(<Entries entries={this.state.entries[i]} deleteEntries={this.props.deleteEntries} entryId={this.state.entries[i]._id} />);
+      entry.push(<Entries updateEntries={this.props.updateEntries} entries={this.state.entries[i]} deleteEntries={this.props.deleteEntries} entryId={this.state.entries[i]._id} />);
     }
     return (
       <div className={'main-dev'}>
@@ -51,7 +51,7 @@ class Main extends Component {
 
           {/* <input name='category' type='text' placeholder='Category...'></input> */}
           <input className={'form-items'} name='title' type='text' placeholder='Title...'></input>
-          <input className={'form-items'} name='text' type='text' placeholder='Description...'></input>
+         <div> <textarea id={'description-id'} className={'form-items'} name='text' type='text' placeholder='Description...'></textarea> </div>
           <input className={'form-items'} className={'create-btn'} type='submit' value="Create Entry"></input>
         </form>
         </div>
