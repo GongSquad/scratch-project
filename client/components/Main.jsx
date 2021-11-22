@@ -18,7 +18,7 @@ class Main extends Component {
       .then(res => res.json())
       .then((res) => this.setState({ entries: res }))
       .catch((error) => {
-        console.log(`There is an ${error} when mounting Quiz component`);
+        console.log(`There is an ${error} when mounting Main component`);
       })
   }
   componentDidUpdate() {
@@ -26,7 +26,7 @@ class Main extends Component {
       .then(res => res.json())
       .then((res) => this.setState({ entries: res }))
       .catch((error) => {
-        console.log(`There is an ${error} when updating Quiz component`);
+        console.log(`There is an ${error} when updating Main component`);
       })
   }
   render() {
@@ -51,7 +51,7 @@ class Main extends Component {
 
           {/* <input name='category' type='text' placeholder='Category...'></input> */}
           <input className={'form-items'} name='title' type='text' placeholder='Title...'></input>
-          <input className={'form-items'} name='text' type='text' placeholder='Description...'></input>
+         <div> <textarea id={'description-id'} className={'form-items'} name='text' type='text' placeholder='Description...'></textarea> </div>
           <input className={'form-items'} className={'create-btn'} type='submit' value="Create Entry"></input>
         </form>
         </div>

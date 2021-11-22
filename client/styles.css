@@ -37,16 +37,22 @@ body {
 
 .description {
   font-size: 1.5rem;
+
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+
+#description-id {
+  height: 20%;
+  width: 95%;
+}
 /* .entry-contents {
   display: flex; 
   justify-content: space-between;
 } */
 
 .form-div {
-  max-width: 500px;
+  max-width: 70%;
 	padding: 20px 12px 10px 20px;
 	font: 13px Arial, Helvetica, sans-serif;
 }
@@ -127,6 +133,18 @@ label {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+.update-btn {
+  background: #171d7a;
+  color: whitesmoke;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Ar
+}
+
 .delete-btn:hover {
   background-color: #171d7a;
   color: whitesmoke;
@@ -136,4 +154,4 @@ label {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-}
+} 
