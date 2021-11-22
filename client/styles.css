@@ -3,13 +3,11 @@ body {
   background-color: #ddd;
 }
 
-h4 {
-  font-size: 1.3rem;
-  line-height: 0.4;
-}
-
 .h-tags {
   padding: 1.5rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 0.4;
 }
 
 #main-div {
@@ -24,9 +22,9 @@ h4 {
   border: solid #171d7a .1rem;
   position: relative;
   background: rgb(245, 245, 245);
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
   box-shadow: 15px 15px rgba(0,0,0,.15);
   transition: all .4s ease;
+  border-radius: 12px;
 }
 
 .entry-div {
@@ -34,11 +32,12 @@ h4 {
   border-bottom: solid #171d7a .2rem;
   text-align: center;
   width: 100%;
-  
+
 }
 
 .description {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 /* .entry-contents {
@@ -71,17 +70,20 @@ label {
   border: solid #171d7a .1rem;
   background: rgb(245, 245, 245);
   width: 125%;
+  border-radius: 8px;
 }
 
 .create-btn {
   background: #323792;
   color: whitesmoke;
   padding: 10px 24px;
+  margin: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 4px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .create-btn:hover {
@@ -121,6 +123,8 @@ label {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 12px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .delete-btn:hover {
