@@ -21,21 +21,28 @@ class Main extends Component {
         console.log(`There is an ${error} when mounting Quiz component`);
       })
   }
-
-
+  componentDidUpdate() {
+    fetch(this.props.getEntries)
+      .then(res => res.json())
+      .then((res) => this.setState({ entries: res }))
+      .catch((error) => {
+        console.log(`There is an ${error} when updating Quiz component`);
+      })
+  }
   render() {
     const entry = [];
     for (let i = 0; i < this.state.entries.length; i++) {
-      entry.push(<Entries entries={this.state.entries[i]} deleteEntries = {this.props.deleteEntries} entryId={this.state.entries[i]._id} />);
+      entry.push(<Entries entries={this.state.entries[i]} deleteEntries={this.props.deleteEntries} entryId={this.state.entries[i]._id} />);
     }
     return (
       <div className={'main-dev'}>
+        <div className={'form-div'}>
         <form className={'entryForm'} method="post" action="/api/test">
 
 
           <label for="category">Choose a category:</label>
 
-          <select name="category" id="category">
+          <select name="category" id="category" className={'form-items'}>
             <option value="Technical Challenges">Technical Challenges</option>
             <option value="APC Notes">APC Notes</option>
             <option value="Reflections">Reflections</option>
@@ -43,11 +50,12 @@ class Main extends Component {
           </select>
 
           {/* <input name='category' type='text' placeholder='Category...'></input> */}
-          <input name='title' type='text' placeholder='Title...'></input>
-          <input name='text' type='text' placeholder='Description...'></input>
-          <input type='submit' value="Create Entry"></input>
+          <input className={'form-items'} name='title' type='text' placeholder='Title...'></input>
+          <input className={'form-items'} name='text' type='text' placeholder='Description...'></input>
+          <input className={'form-items'} className={'create-btn'} type='submit' value="Create Entry"></input>
         </form>
-        <div>{entry}</div>
+        </div>
+        <div className={'outer-entry'}>{entry}</div>
       </div >
     )
   }

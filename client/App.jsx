@@ -15,10 +15,8 @@ componentDidMount() {
 
 render () {
   return (
-  <div>
-    <div>
+    <div id = {'main-div'}>
     <Main getEntries = {getEntries} deleteEntries = {deleteEntries}/>
-    </div>
     </div>
   );
 }
