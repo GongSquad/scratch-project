@@ -47,7 +47,7 @@ app.get('/api/test', entryController.getEntry);
 // update a journal entry
 app.patch('/api/update/:entryId', entryController.updateEntry, (req, res) =>{
   return res.status(200).redirect('/');
-});
+}); 
 
 // delete a journal entry
 app.delete('/api/delete/:entryId', entryController.deleteEntry,  (req, res) => {
