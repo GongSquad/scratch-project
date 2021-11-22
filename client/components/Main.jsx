@@ -18,7 +18,7 @@ class Main extends Component {
       .then(res => res.json())
       .then((res) => this.setState({ entries: res }))
       .catch((error) => {
-        console.log(`There is an ${error} when mounting Quiz component`);
+        console.log(`There is an ${error} when mounting Main component`);
       })
   }
   componentDidUpdate() {
@@ -26,7 +26,7 @@ class Main extends Component {
       .then(res => res.json())
       .then((res) => this.setState({ entries: res }))
       .catch((error) => {
-        console.log(`There is an ${error} when updating Quiz component`);
+        console.log(`There is an ${error} when updating Main component`);
       })
   }
   render() {

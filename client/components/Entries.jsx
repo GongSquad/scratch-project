@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Modal from './Modal';
+import Modal from './Modal';
 
 class Entries extends Component {
   constructor(props) {
@@ -29,14 +29,14 @@ class Entries extends Component {
   render() {
     return (
       <div className={'entry-div'}>
-        {/* <Modal entryId={this.props.entryId} updateEntries={this.props.updateEntries} prop={this.state} showModal={this.state.showModal} handleClose={this.hideModal} entries={this.props.entries}/> */}
+        <Modal entryId={this.props.entryId} prop={this.state} showModal={this.showModal} hideModal={this.hideModal} entries={this.props.entries}/>
         <div className={'h-tags'}>
           <h4>{this.props.entries.title}</h4>
           <h4>{this.props.entries.category}</h4>
           {/* <h4>{this.props.entries.date}</h4> */}
         </div>
         <p className={'description'}>{this.props.entries.text}</p>
-      <div> <button className={'update-btn'}>Update Entry</button><button className={'delete-btn'} onClick={this.handleDelete}>Delete Entry</button> </div> 
+      <div> <button className={'update-btn'} onClick={this.showModal}>Update Entry</button><button className={'delete-btn'} onClick={this.handleDelete}>Delete Entry</button> </div> 
       </div>
     );
   }

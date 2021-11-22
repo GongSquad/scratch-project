@@ -17,15 +17,6 @@
   transform: translate(-50%,-50%);
 }
 
-#modal-img {
-  height: 15rem;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  /* width: 50%; */
-}
-
 .display-block {
   display: block;
 }
@@ -34,27 +25,3 @@
   display: none;
 }
 
-.description {
-  padding-top: 2rem;
-  margin: .5rem;
-  font-size: 1.3rem;
-  font-family:'Courier New', Courier, monospace;
-}
-
-.closeBtn {
-  margin: .8rem;
-  height: 4rem;
-  width: 10rem;
-  font-size: 1.1rem;
-  font-family:'Courier New', Courier, monospace;
-}
-
-.closeBtn:hover {
-  background-color:  rgb(144, 238, 218);
-  color:rgb(133, 50, 64);
-}
-
-.closeBtn:active {
-  box-shadow: 0 3.5px rgb(56, 18, 25);
-  transform: translateY(4px);
-}
