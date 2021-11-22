@@ -10,6 +10,4 @@ const entrySchema = new Schema({
   text: {type: String, required: false}
 })
 
-// You must export your model through module.exports
-// The collection name should be 'student'
 module.exports = mongoose.model('entry', entrySchema);
