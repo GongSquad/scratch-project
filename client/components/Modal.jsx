@@ -28,6 +28,7 @@ class Modal extends Component {
                 </select>
 
                 {/* <input name='category' type='text' placeholder='Category...'></input> */}
+                {/* need to change to textarea */}
                 <input name='title' type='text'></input>
                 <div> <textarea name='text' type='text' defaultValue ={`${this.props.entries.text}`} ></textarea> </div>
                 <input type='submit' value="Update Entry" className={'closeBtn'} onClick={this.props.hideModal}></input>
