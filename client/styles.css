@@ -1,53 +1,139 @@
-.entry-div {
-  margin: 1rem;
-  padding: 1rem;
-  border: solid rgb(24, 24, 24) .2rem;
+body {
   text-align: center;
+  background-color: #ddd;
+}
+
+.h-tags {
+  padding: 1.5rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 0.4;
+}
+
+#main-div {
+  margin: auto;
   width: 50%;
+}
+
+.outer-entry {
+  height: 70%;
+  overflow:scroll;
+  overflow-x:hidden;
+  border: solid #171d7a .1rem;
+  position: relative;
+  background: rgb(245, 245, 245);
+  box-shadow: 15px 15px rgba(0,0,0,.15);
+  transition: all .4s ease;
+  border-radius: 12px;
+}
+
+.entry-div {
+  padding: 1rem;
+  border-bottom: solid #171d7a .2rem;
+  text-align: center;
+  width: 100%;
+
+}
+
+.description {
+  font-size: 1.5rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* .entry-contents {
+  display: flex; 
+  justify-content: space-between;
+} */
+
+.form-div {
+  max-width: 500px;
+	padding: 20px 12px 10px 20px;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+
+.form-div label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+
+label {
+  font-weight: bold;
+	font-style: italic;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 20px;
+	font-size: 15px;
+	padding-bottom: 3px;
 }
 
 .entryForm {
   margin: 1rem;
+  border: solid #171d7a .1rem;
+  background: rgb(245, 245, 245);
+  width: 125%;
+  border-radius: 8px;
 }
 
-/* Dropdown Button */
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+.create-btn {
+  background: #323792;
+  color: whitesmoke;
+  padding: 10px 24px;
+  margin: 10px;
+  text-align: center;
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.create-btn:hover {
+  background-color: whitesmoke;
+  color: #323792;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.form-items {
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+	outline: none;
+  margin: 1rem;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.header {
+  padding: .5%;
+  text-align: center;
+  background: #171d7a;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.delete-btn {
+  background: whitesmoke;
+  color: #171d7a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.delete-btn:hover {
+  background-color: #171d7a;
+  color: whitesmoke;
+}
+
+.delete-btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
