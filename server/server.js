@@ -35,25 +35,33 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 // display all journal entries in DB
 app.get('/api', entryController.getEntries);
 
+
 // create a journal entry
 app.post('/api/test', entryController.createEntry, (req, res) => {
   return res.status(200).redirect('/');
 });
 
-// // find a journal entry
-// app.get('/test', entryController.getEntry);
+// find a journal entry
+app.get('/api/test', entryController.getEntry);
 
-// // update a journal entry
-// app.patch('/test', entryController.updateEntry);
+// update a journal entry
+app.patch('/api/update', entryController.updateEntry);
 
-// // delete a journal entry
-// app.delete('/test', entryController.deleteEntry);
+// delete a journal entry
+app.delete('/api/delete/:entryId', entryController.deleteEntry,  (req, res) => {
+  console.log('left delete entry')
+  
+  return res.status(200);
+});
+
 
 // /////////////////////////////////////////////////////////////////////////////
 // //test to send main file to 3000
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'))
 });
+
+
 
 //404 error handler
 app.use('*', (req, res) => {
