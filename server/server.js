@@ -12,7 +12,9 @@ const PORT = 3000;
 const app = express();
 
 //this creates a mongoose db
-const MONGO_URI = 'mongodb+srv://nichsuz:Brady4eva808@cluster0.j7woi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+//connect your own database!! 
+const MONGO_URI = 
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.once('open', () => {
@@ -45,7 +47,7 @@ app.post('/api/test', entryController.createEntry, (req, res) => {
 app.get('/api/test', entryController.getEntry);
 
 // update a journal entry
-app.patch('/api/update/:entryId', entryController.updateEntry, (req, res) =>{
+app.put('/api/update/:entryId', entryController.updateEntry, (req, res) =>{
   return res.status(200).redirect('/');
 }); 
 
