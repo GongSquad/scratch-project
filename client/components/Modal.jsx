@@ -7,6 +7,13 @@ class Modal extends Component {
     super(props)
   }
 
+  handleUpdate() {
+    fetch(this.props.updateEntries + '/' + this.props.entryId, { method: 'PUT', headers: { 'Content-type': 'application/json; charset=UTF-8' } })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+  }
+
   render() {
     // const showHideClassName = this.props.showModal ? "modal display-block" : "modal display-none" ;
     return (
@@ -14,7 +21,7 @@ class Modal extends Component {
         <section className="modal-main">
 
             <div>
-              <form method="update" action={`/api/update/${this.props.entries._id}`}>
+              <form>
 
 
                 <label for="category">Choose a category:</label>
@@ -29,9 +36,9 @@ class Modal extends Component {
 
                 {/* <input name='category' type='text' placeholder='Category...'></input> */}
                 {/* need to change to textarea */}
-                <input name='title' type='text'></input>
+                <div><textarea name='title' type='text'  defaultValue ={`${this.props.entries.title}`}></textarea></div>
                 <div> <textarea name='text' type='text' defaultValue ={`${this.props.entries.text}`} ></textarea> </div>
-                <input type='submit' value="Update Entry" className={'closeBtn'} onClick={this.props.hideModal}></input>
+                <input type='submit' value="Update Entry" className={'closeBtn'} onSubmit={this.handleUpdate} onSubmit={this.props.hideModal}></input>
               </form>
             </div>
 
